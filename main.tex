@@ -1,0 +1,43 @@
+\documentclass[10pt, t, aspectratio = 1610]{ctexbeamer}
+\usepackage{./template/beamertheme}
+\input{./configuration}
+
+\title{\LaTeX{} 幻灯片膜板}
+\subtitle{使用方法}
+\date{\today}
+\author{%
+    张琦\texorpdfstring{\\zqmillet@qq.com}{}
+}
+
+\institute%
+{%
+    华莱士有限公司%
+}
+
+\newcommand{\insertcover}{{
+    \aauwavesbg%
+    \begin{frame}[plain, noframenumbering]
+         \titlepage
+    \end{frame}
+}}
+
+\newsavebox{\longestsec}
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3.2em\rlap{\hskip-2em\inserttocsectionnumber.\inserttocsubsectionnumber}\footnotesize\inserttocsubsection\par}
+
+\begin{document}
+\insertcover
+
+\begin{frame}{目录}
+    \begin{lrbox}{\longestsec}Last section in the presentation\end{lrbox}
+    \setlength{\leftskip}{\dimexpr.5\textwidth-.5\wd\longestsec\relax}
+    \linespread{1}
+    \tableofcontents
+\end{frame}
+
+\section{Introduction}
+\subsection{2333}
+\begin{frame}{Frame Title}
+    
+\end{frame}
+
+\end{document}
